@@ -1,18 +1,21 @@
 import { Router } from "express";
+import * as apiControllers from '../controllers/apiControllers'
 
 const router = Router();
 
-router.get('/ping', (req,res) =>{
-    res.json({pong : true});
-});
+router.get('/ping', apiControllers.ping );
 
-router.get('/random', (req,res) =>{
-    let nRandom: number = Math.floor(Math.random()*10);
-    res.json({number: nRandom})
-})
+router.get('/random', apiControllers.random);
 
-router.get('/nome/:nome', (req, res) => {
-    let nome: string = req.params.nome;
-    res.json({nome});
-})
+router.get('/nome/:nome', apiControllers.nome);
+
+router.get('/homeUSer', apiControllers.homeUSer);
+
+router.get('/homeRemedios', apiControllers.homeRemedios);
+
+router.get('/homeBrand', apiControllers.homeBrand);
+router.get('/homeCategori', apiControllers.homeCategori);
+
+
+
 export default router
