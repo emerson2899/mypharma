@@ -8,22 +8,25 @@ import Categori from "../models/Categori"
 
 export const homeUSer = async (req: Request, res:Response) =>{
     let usuarios = await User.find()
-    console.log("USUARIOS", usuarios);
+    res.json({usuarios});
 }
 
 export const homeRemedios = async (req: Request, res:Response) =>{
     let remedios = await Remedios.find()
-    console.log("REMEDIOS", remedios);
+    
+    res.json({remedios})
 }
 
 export const homeBrand = async (req: Request, res:Response) =>{
     let brand = await Brand.find()
-    console.log("Marca", brand);
+    console.log("MARCA:", brand);
+    res.json({brand});
+
 }
 
 export const homeCategori = async (req: Request, res:Response) =>{
     let categori = await Categori.find()
-    console.log("Categoria", categori);
+    console.log("CATEGORIA", categori);
 }
 
 
